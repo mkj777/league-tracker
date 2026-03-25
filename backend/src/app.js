@@ -10,10 +10,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Routen
+// Routes
 app.use("/league", league);
 
-// Backend starten
+// Backend start
 const port = 3000;
 app.listen(port, () => {
   console.log(
