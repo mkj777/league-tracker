@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import league from "./routes/league.js";
+import league from "./routes/profile.js";
 
 dotenv.config();
 const app = express();
