@@ -1,12 +1,22 @@
 import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import league from "./routes/league.js";
 
+dotenv.config();
 const app = express();
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Routen
+app.use("/league", league);
+
+// Backend starten
 const port = 3000;
-
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(
+    `\n\x1b[32mLeague Tracker Backend is running on http://localhost:${port}\x1b[0m`,
+  );
 });
