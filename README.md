@@ -1,2 +1,3 @@
-# league-tracker
-League of Legends Profile Tracker inspired by Deeplol, OP.GG, U.GG, etc.
+## Focused.gg
+
+League of Legends Profile Tracker in Development
