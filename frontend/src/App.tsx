@@ -1,6 +1,4 @@
 import "./App.css";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 
 function App() {
   const player = {
@@ -25,8 +23,8 @@ function App() {
   return (
     <>
       <main className="flex flex-col items-center gap-8 mt-20">
-        <h1 className="text-4xl font-bold">focused.gg</h1>
-        <div className="flex flex-col md:flex-row gap-6 w-full max-w-3xl">
+        <h1 className="text-4xl font-bold">hubris.gg</h1>
+        <div className="flex flex-col md:flex-row gap-4 w-full max-w-3xl">
           <img
             className="h-20 rounded-md"
             src={`https://ddragon.leagueoflegends.com/cdn/16.6.1/img/profileicon/${player.profileIconId}.png`}
@@ -39,21 +37,19 @@ function App() {
             <p className="font-medium">{player.region}</p>
           </div>
         </div>
-        <div className="flex flex-row w-full">
-          <div>
-            <img
-              className="h-128"
-              src={rankEmblemUrl(player.tier)}
-              alt={player.tier}
-            />
-          </div>
-          <div className="flex flex-col">
-            <div className="text-xl font-bold">
-              {player.tier} {player.rank} {player.leaguePoints} LP
-            </div>
-            <div className="font-medium">
-              {player.wins}W / {player.losses}L - {winRate}% WR
-            </div>
+        <div className="flex flex-row items-center w-full">
+          <img
+            className="h-86 -mx-30 -my-30"
+            src={rankEmblemUrl(player.tier)}
+            alt={player.tier}
+          />
+          <div className="flex flex-col text-left -ml-24 -mt-4">
+            <p className="text-xl font-bold">
+              {player.tier} {player.rank} - {player.leaguePoints} LP
+            </p>
+            <p className="font-medium">
+              {winRate}% WR - {player.wins}W / {player.losses}L
+            </p>
           </div>
         </div>
       </main>
