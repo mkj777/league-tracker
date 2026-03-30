@@ -33,8 +33,12 @@ function App() {
             <p className="text-xl font-semibold">
               {player.gameName} #{player.tagLine}
             </p>
-            <p className="text-md font-medium">Level {player.summonerLevel}</p>
-            <p className="font-medium">{player.region}</p>
+            <div className="flex flex-row justify-between">
+              <div className="text-md font-medium">
+                Level {player.summonerLevel}
+              </div>
+              <div className="font-medium text-end">{player.region}</div>
+            </div>
           </div>
         </div>
         <div className="flex flex-row items-center w-full">
