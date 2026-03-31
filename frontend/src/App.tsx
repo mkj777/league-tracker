@@ -6,7 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from "./components/ui/card";
-import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const player = {
@@ -95,7 +94,6 @@ function App() {
           </CardContent>
         </Card>
       </main>
-      <Analytics />
     </div>
   );
 }
