@@ -1,10 +1,8 @@
 import "./App.css";
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "./components/ui/card";
@@ -24,82 +22,11 @@ function App() {
     losses: 70,
   };
 
-  const matches = [
-    {
-      id: "1",
-      champion: "Jinx",
-      championId: "Jinx",
-      outcome: "WIN",
-      kills: 12,
-      deaths: 3,
-      assists: 7,
-      cs: 234,
-      duration: 32,
-      gameMode: "Ranked Solo",
-      timeAgo: "2 hours ago",
-    },
-    {
-      id: "2",
-      champion: "Caitlyn",
-      championId: "Caitlyn",
-      outcome: "LOSS",
-      kills: 4,
-      deaths: 8,
-      assists: 3,
-      cs: 187,
-      duration: 28,
-      gameMode: "Ranked Solo",
-      timeAgo: "3 hours ago",
-    },
-    {
-      id: "3",
-      champion: "Jinx",
-      championId: "Jinx",
-      outcome: "WIN",
-      kills: 18,
-      deaths: 2,
-      assists: 11,
-      cs: 289,
-      duration: 41,
-      gameMode: "Ranked Solo",
-      timeAgo: "5 hours ago",
-    },
-    {
-      id: "4",
-      champion: "Ezreal",
-      championId: "Ezreal",
-      outcome: "LOSS",
-      kills: 6,
-      deaths: 6,
-      assists: 8,
-      cs: 201,
-      duration: 35,
-      gameMode: "Ranked Solo",
-      timeAgo: "yesterday",
-    },
-    {
-      id: "5",
-      champion: "Jinx",
-      championId: "Jinx",
-      outcome: "WIN",
-      kills: 9,
-      deaths: 4,
-      assists: 5,
-      cs: 215,
-      duration: 29,
-      gameMode: "Ranked Solo",
-      timeAgo: "yesterday",
-    },
-  ];
-
   const winRate = Math.round(
     (player.wins / (player.wins + player.losses)) * 100,
   );
   const rankEmblemUrl = (tier: string) =>
     `https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/ranked-emblem/wings/wings_${tier.toLowerCase()}.png`;
-
-  const championIconUrl = (championId: string) =>
-    `https://ddragon.leagueoflegends.com/cdn/16.6.1/img/champion/${championId}.png`;
 
   const profileIconUrl = (profileIconId: number) =>
     `https://ddragon.leagueoflegends.com/cdn/16.6.1/img/profileicon/${profileIconId}.png`;
@@ -158,17 +85,15 @@ function App() {
             </div>
           </div>
         </div>
-        {matches.map((match) => (
-          <Card>
-            <CardHeader>
-              <CardTitle>Card Title</CardTitle>
-              <CardDescription>Card Description</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p>Card Content</p>
-            </CardContent>
-          </Card>
-        ))}
+        <Card>
+          <CardHeader>
+            <CardTitle>Card Title</CardTitle>
+            <CardDescription>Card Description</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p>Card Content</p>
+          </CardContent>
+        </Card>
       </main>
       <Analytics />
     </div>
