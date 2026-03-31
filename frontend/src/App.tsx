@@ -6,8 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from "./components/ui/card";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function App() {
   const player = {
@@ -34,8 +32,6 @@ function App() {
 
   return (
     <>
-      <Analytics />
-      <SpeedInsights />
       <main className="flex flex-col">
         <div className="flex flex-row gap-4 w-full mt-38 items-center">
           <div className="relative w-66 h-66 -mt-20">
