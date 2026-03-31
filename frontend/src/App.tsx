@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "./components/ui/card";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const player = {
@@ -104,7 +105,7 @@ function App() {
     `https://ddragon.leagueoflegends.com/cdn/16.6.1/img/profileicon/${profileIconId}.png`;
 
   return (
-    <>
+    <div>
       <main className="flex flex-col">
         <div className="flex flex-row gap-4 w-full mt-38 items-center">
           <div className="relative w-66 h-66 -mt-20">
@@ -169,7 +170,8 @@ function App() {
           </Card>
         ))}
       </main>
-    </>
+      <Analytics />
+    </div>
   );
 }
 
