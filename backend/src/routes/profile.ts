@@ -3,7 +3,7 @@ import axios from "axios";
 
 const router = express.Router();
 
-const continentConvert = (region) => {
+const continentConvert = (region: string) => {
   if (region == "euw1") return "europe";
   if (region == "na1") return "americas";
   return "unknown";
@@ -43,13 +43,18 @@ router.get("/:region/:name/:tag", async (req, res) => {
       rankedData: response.data, // entries
     });
   } catch (error) {
-    console.error("Riot API Error:", error.response?.data || error.message);
+    if (axios.isAxiosError(error)) {
+      console.error("Riot API Error:", error.response?.data || error.message);
 
-    // 4. Returning StatusCode to the Middleware
-    const statusCode = error.response?.status || 500;
-    res
-      .status(statusCode)
-      .json({ error: "Error when fetching Ranked Entries Data" });
+      // 4. Returning StatusCode to the Middleware
+      const statusCode = error.response?.status || 500;
+      res
+        .status(statusCode)
+        .json({ error: "Error when fetching Ranked Entries Data" });
+    } else {
+      console.error("Unexpected Error:", error);
+      res.status(500).json({ error: "An unexpected error occurred" });
+    }
   }
 });
 
